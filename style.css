@@ -1,0 +1,68 @@
+form {
+  padding: 40px;
+  font-size: larger;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 15px;
+}
+
+.searchButton,
+.currentButton {
+  background-color: #a2a8d3;
+  color: white;
+  border-color: transparent;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  color: #a2a8d3;
+  background-color: white;
+  border-color: #a2a8d3;
+}
+
+.currentButton:hover {
+  cursor: pointer;
+  color: #a2a8d3;
+  background-color: white;
+  border-color: #a2a8d3;
+}
+
+p {
+  font-size: 25px;
+  margin: 30px;
+  padding: 15px;
+  text-align: center;
+}
+
+.list-group {
+  font-size: 25px;
+  display: grid;
+  justify-content: center;
+}
+
+.container {
+  font-family: "Poppins", sans-serif;
+}
+
+.one,
+.two {
+  font-size: 40px;
+  margin: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.currentTemp {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 40px;
+}
