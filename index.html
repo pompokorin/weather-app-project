@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/2e6228d49a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search">
+        <input
+          type="text"
+          class="search"
+          placeholder="Type to search..."
+          id="search-input"
+        />
+        <button type="submit" class="searchButton" id="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button type=" submit" class="currentButton" id="current-button">
+          Current
+        </button>
+      </form>
+
+      <div class="row one">
+        <div class="col-6 col-md-4" id="current-day"></div>
+        <div class="col-6 col-md-4" id="current-city">📍Tokyo</div>
+        <div class="col-6 col-md-4" id="description"></div>
+      </div>
+
+      <div class="row two">
+        <div class="col-6 col-md-4" id="current-time"></div>
+        <div class="col-6 col-md-4 currentTemp" id="current-temp"></div>
+        <div class="col-6 col-md-4" id="minmax-temp"></div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Weather for next 5 days</p>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Tue</div>
+                <div class="col">🌤️</div>
+                <div class="col description">Partly cloudy</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Wed</div>
+                <div class="col">🌧️</div>
+                <div class="col description">Rainy</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Thur</div>
+                <div class="col">🌩️</div>
+                <div class="col description">Cloudy with thunder</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Fri</div>
+                <div class="col">⛅️</div>
+                <div class="col description">Mostly cloudy</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Sat</div>
+                <div class="col">🌦️</div>
+                <div class="col description">Chance of shower</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+
+  <footer>Coded by Mina Miyamoto</footer>
+</html>
