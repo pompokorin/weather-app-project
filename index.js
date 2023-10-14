@@ -65,6 +65,7 @@ function showTemperature(response) {
   console.log(response);
 }
 
+//search function
 function searchCity(city) {
   let apiKey = "5ad4d6552040940c65e12ddec5df0535";
   let units = "metric";
