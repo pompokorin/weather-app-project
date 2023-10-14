@@ -20,8 +20,8 @@ form {
 .searchButton,
 .currentButton {
   background-color: #dfd3c3;
-  color: black
-  border-color: black;
+  color: black;
+  background-color: black;
 }
 
 .searchButton:hover {
