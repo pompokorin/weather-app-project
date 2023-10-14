@@ -48,10 +48,24 @@
         </button>
       </form>
 
-      <div class="weatherReport">
-        <div class="row" id="current-city"></div>
-        <div class="row" id="current-temp"></div>
-        <div class="row" id="description"></div>
+      <div class="row justify-content-evenly">
+        <div class="col-4 quick">
+          <ul class="list-unstyled">
+            <li id="current-city"></li>
+            <li id="current-temp"></li>
+            <li id="description"></li>
+          </ul>
+        </div>
+
+        <div class="col-4 detail">
+          <ul class="list-unstyled">
+            <li>Feels like: <span id="feels-like"></span>°C</li>
+            <li>Min temperature: <span id="min-temp"></span>°C</li>
+            <li>Max temperature: <span id="max-temp"></span>°C</li>
+            <li>Himidity: <span id="humidity"></span>%</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
+          </ul>
+        </div>
       </div>
 
       <div class="row next5daysReport">

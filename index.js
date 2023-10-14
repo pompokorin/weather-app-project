@@ -44,7 +44,7 @@ function showTemperature(response) {
   //let minmaxTemp = document.querySelector("#minmax-temp");
   //minmaxTemp.innerHTML = `${minTemp}℃/${maxTemp}℃`;
 
-  let description = response.data.weather[0].main;
+  let description = response.data.weather[0].description;
   let tempDescrip = document.querySelector("#description");
   tempDescrip.innerHTML = description;
 
@@ -57,7 +57,7 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
-searchCity("Tokyo");
+searchCity("Sydney");
 
 function newCity(event) {
   event.preventDefault();
