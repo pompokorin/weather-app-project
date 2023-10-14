@@ -39,26 +39,26 @@ form {
   font-size: 60px;
 }
 
-p {
-  font-size: 25px;
-  margin: 30px;
-  padding: 15px;
-  text-align: center;
+#current-city {
+  font-size: 20px;
 }
 
-.list-group {
-  font-size: 25px;
-  display: grid;
-  justify-content: center;
+#description {
+  font-size: 20px;
+}
+
+.detail {
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 .container {
   font-family: "Poppins", sans-serif;
-}
-
-.currentTemp {
-  font-size: 50px;
-  font-weight: 600;
 }
 
 footer {
@@ -74,4 +74,44 @@ footer {
   margin: 20px auto;
   border-radius: 10px;
   max-width: 800px;
+}
+
+.next5days {
+  text-align: center;
+  font-size: 20px;
+}
+
+.one {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.two {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.three {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.four {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.five {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
 }
