@@ -1,25 +1,15 @@
 //formatting date
 let now = new Date();
 
-let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
-
-let currentMonth = months[now.getMonth()];
-let dateOfMonth = now.getDate();
 
 let currentDay = days[now.getDay()];
 
@@ -27,7 +17,7 @@ let hour = now.getHours();
 let minute = now.getMinutes();
 
 let currdate = document.querySelector("#current-date");
-currdate.innerHTML = `${dateOfMonth} ${currentMonth} ${currentDay}, ${hour}:${minute}`;
+currdate.innerHTML = `${currentDay}, ${hour}:${minute}`;
 
 //getting weather info from open-weather-map
 function showTemperature(response) {

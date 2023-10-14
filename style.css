@@ -73,4 +73,5 @@ footer {
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
+  max-width: 800px;
 }
