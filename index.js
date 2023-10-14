@@ -39,14 +39,29 @@ function showTemperature(response) {
   let currTemp = document.querySelector("#current-temp");
   currTemp.innerHTML = `${temperature}℃`;
 
-  //let minTemp = Math.round(response.data.main.temp_min);
-  //let maxTemp = Math.round(response.data.main.temp_max);
-  //let minmaxTemp = document.querySelector("#minmax-temp");
-  //minmaxTemp.innerHTML = `${minTemp}℃/${maxTemp}℃`;
-
   let description = response.data.weather[0].description;
   let tempDescrip = document.querySelector("#description");
   tempDescrip.innerHTML = description;
+
+  let actualTemp = Math.round(response.data.main.feels_like);
+  let feelslikeTemp = document.querySelector("#feels-like");
+  feelslikeTemp.innerHTML = actualTemp;
+
+  let minTemp = Math.round(response.data.main.temp_min);
+  let minimumTemp = document.querySelector("#min-temp");
+  minimumTemp.innerHTML = minTemp;
+
+  let maxTemp = Math.round(response.data.main.temp_max);
+  let maximumTemp = document.querySelector("#max-temp");
+  maximumTemp.innerHTML = maxTemp;
+
+  let humidity = Math.round(response.data.main.humidity);
+  let displayHumidity = document.querySelector("#humidity");
+  displayHumidity.innerHTML = humidity;
+
+  let wind = Math.round(response.data.wind.speed);
+  let displayWind = document.querySelector("#wind");
+  displayWind.innerHTML = wind;
 
   console.log(response);
 }
