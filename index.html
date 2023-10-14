@@ -31,86 +31,99 @@
   </head>
   <body>
     <div class="container">
-      <div class="formatDate" id="current-date"></div>
+      <div class="weatherApp">
+        <form id="search">
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <input
+                type="text"
+                class="searc form-control shadow-sm"
+                placeholder="Type a city..."
+                autofocus="on"
+                autocomplete="off"
+                id="search-input"
+              />
+            </div>
+            <div class="col-3">
+              <button type="submit" class="searchButton" id="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="col-3">
+              <button type=" submit" class="currentButton" id="current-button">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
 
-      <form id="search">
-        <input
-          type="text"
-          class="search"
-          placeholder="Type to search..."
-          id="search-input"
-        />
-        <button type="submit" class="searchButton" id="search-button">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <button type=" submit" class="currentButton" id="current-button">
-          Current
-        </button>
-      </form>
+        <div class="formatDate" id="current-date"></div>
 
-      <div class="row justify-content-evenly">
-        <div class="col-4 quick">
-          <ul class="list-unstyled">
-            <li id="current-city"></li>
-            <li id="current-temp"></li>
-            <li id="description"></li>
-          </ul>
+        <div class="row justify-content-evenly">
+          <div class="col-4 quick">
+            <ul class="list-unstyled">
+              <li id="current-city"></li>
+              <li id="current-temp"></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+
+          <div class="col-4 detail">
+            <ul class="list-unstyled">
+              <li>Feels like: <span id="feels-like"></span>°C</li>
+              <li>Min temperature: <span id="min-temp"></span>°C</li>
+              <li>Max temperature: <span id="max-temp"></span>°C</li>
+              <li>Himidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-4 detail">
-          <ul class="list-unstyled">
-            <li>Feels like: <span id="feels-like"></span>°C</li>
-            <li>Min temperature: <span id="min-temp"></span>°C</li>
-            <li>Max temperature: <span id="max-temp"></span>°C</li>
-            <li>Himidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind"></span> km/h</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row next5daysReport">
-        <div class="col">
-          <p>Weather for next 5 days</p>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col">Tue</div>
-                <div class="col">🌤️</div>
-                <div class="col description">Partly cloudy</div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col">Wed</div>
-                <div class="col">🌧️</div>
-                <div class="col description">Rainy</div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col">Thur</div>
-                <div class="col">🌩️</div>
-                <div class="col description">Cloudy with thunder</div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col">Fri</div>
-                <div class="col">⛅️</div>
-                <div class="col description">Mostly cloudy</div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col">Sat</div>
-                <div class="col">🌦️</div>
-                <div class="col description">Chance of shower</div>
-              </div>
-            </li>
-          </ul>
+        <div class="row next5daysReport">
+          <div class="col">
+            <p>Weather for next 5 days</p>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">Tue</div>
+                  <div class="col">🌤️</div>
+                  <div class="col description">Partly cloudy</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">Wed</div>
+                  <div class="col">🌧️</div>
+                  <div class="col description">Rainy</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">Thur</div>
+                  <div class="col">🌩️</div>
+                  <div class="col description">Cloudy with thunder</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">Fri</div>
+                  <div class="col">⛅️</div>
+                  <div class="col description">Mostly cloudy</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">Sat</div>
+                  <div class="col">🌦️</div>
+                  <div class="col description">Chance of shower</div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
     <script src="index.js"></script>
   </body>
 
