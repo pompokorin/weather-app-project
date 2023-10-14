@@ -4,11 +4,6 @@ form {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-  font-size: 15px;
-}
-
 .searchButton,
 .currentButton {
   background-color: #a2a8d3;
@@ -30,6 +25,11 @@ h1 {
   border-color: #a2a8d3;
 }
 
+#current-date {
+  text-align: center;
+  font-size: 25px;
+}
+
 p {
   font-size: 25px;
   margin: 30px;
@@ -45,14 +45,6 @@ p {
 
 .container {
   font-family: "Poppins", sans-serif;
-}
-
-.one,
-.two {
-  font-size: 40px;
-  margin: 50px;
-  text-align: center;
-  position: relative;
 }
 
 .currentTemp {

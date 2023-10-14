@@ -1,25 +1,32 @@
 let now = new Date();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
-let day = days[now.getDay()];
+let currentMonth = months[now.getMonth()];
+let dateOfMonth = now.getDate();
+
+let currentDay = days[now.getDay()];
 
 let hour = now.getHours();
 let minute = now.getMinutes();
 
-let currday = document.querySelector("#current-day");
-currday.innerHTML = day;
-
-let currtime = document.querySelector("#current-time");
-currtime.innerHTML = `${hour}:${minute}`;
+let currdate = document.querySelector("#current-date");
+currdate.innerHTML = `${dateOfMonth} ${currentMonth} (${currentDay}), ${hour}:${minute}`;
 
 function showTemperature(response) {
   let cityElement = response.data.name;
