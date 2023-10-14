@@ -27,7 +27,17 @@ form {
 
 #current-date {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.weatherReport {
+  font-size: 30px;
+  padding: 20px;
+}
+
+#current-temp {
+  font-size: 60px;
 }
 
 p {

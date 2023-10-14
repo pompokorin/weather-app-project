@@ -31,6 +31,8 @@
   </head>
   <body>
     <div class="container">
+      <div class="formatDate" id="current-date"></div>
+
       <form id="search">
         <input
           type="text"
@@ -46,11 +48,13 @@
         </button>
       </form>
 
-      <div class="formatDate" id="current-date"></div>
+      <div class="weatherReport">
+        <div class="row" id="current-city"></div>
+        <div class="row" id="current-temp"></div>
+        <div class="row" id="description"></div>
+      </div>
 
-      <div class="content"></div>
-
-      <div class="row">
+      <div class="row next5daysReport">
         <div class="col">
           <p>Weather for next 5 days</p>
           <ul class="list-group">

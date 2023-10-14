@@ -1,3 +1,4 @@
+//formatting date
 let now = new Date();
 
 let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -26,8 +27,9 @@ let hour = now.getHours();
 let minute = now.getMinutes();
 
 let currdate = document.querySelector("#current-date");
-currdate.innerHTML = `${dateOfMonth} ${currentMonth} (${currentDay}), ${hour}:${minute}`;
+currdate.innerHTML = `${dateOfMonth} ${currentMonth} ${currentDay}, ${hour}:${minute}`;
 
+//getting weather info from open-weather-map
 function showTemperature(response) {
   let cityElement = response.data.name;
   let cityName = document.querySelector("#current-city");
@@ -37,10 +39,10 @@ function showTemperature(response) {
   let currTemp = document.querySelector("#current-temp");
   currTemp.innerHTML = `${temperature}℃`;
 
-  let minTemp = Math.round(response.data.main.temp_min);
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let minmaxTemp = document.querySelector("#minmax-temp");
-  minmaxTemp.innerHTML = `${minTemp}℃/${maxTemp}℃`;
+  //let minTemp = Math.round(response.data.main.temp_min);
+  //let maxTemp = Math.round(response.data.main.temp_max);
+  //let minmaxTemp = document.querySelector("#minmax-temp");
+  //minmaxTemp.innerHTML = `${minTemp}℃/${maxTemp}℃`;
 
   let description = response.data.weather[0].main;
   let tempDescrip = document.querySelector("#description");
