@@ -1,23 +1,32 @@
-//formatting date
-let now = new Date();
+function formatDate(now) {
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let currentDay = days[now.getDay()];
+  let dayIndex = now.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
 
-let hour = now.getHours();
-let minute = now.getMinutes();
+  return `${day} ${hours}:${minutes}`;
+}
 
-let currdate = document.querySelector("#current-date");
-currdate.innerHTML = `${currentDay}, ${hour}:${minute}`;
+let displayDate = document.querySelector("#current-date");
+let currentTime = new Date();
+displayDate.innerHTML = formatDate(currentTime);
 
 //getting weather info from open-weather-map
 function showTemperature(response) {
