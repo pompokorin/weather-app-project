@@ -30,48 +30,42 @@ displayDate.innerHTML = formatDate(currentTime);
 
 //getting weather info from open-weather-map
 function showTemperature(response) {
-  let cityElement = response.data.name;
+  let cityElement = response.data.city;
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = `📍${cityElement}`;
 
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let currTemp = document.querySelector("#current-temp");
   currTemp.innerHTML = `${temperature}℃`;
 
-  let description = response.data.weather[0].description;
+  let description = response.data.condition.description;
   let tempDescrip = document.querySelector("#description");
   tempDescrip.innerHTML = description;
 
-  let actualTemp = Math.round(response.data.main.feels_like);
+  let actualTemp = Math.round(response.data.temperature.feels_like);
   let feelslikeTemp = document.querySelector("#feels-like");
   feelslikeTemp.innerHTML = actualTemp;
-
-  let minTemp = Math.round(response.data.main.temp_min);
-  let minimumTemp = document.querySelector("#min-temp");
-  minimumTemp.innerHTML = minTemp;
-
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let maximumTemp = document.querySelector("#max-temp");
-  maximumTemp.innerHTML = maxTemp;
-
-  let humidity = Math.round(response.data.main.humidity);
-  let displayHumidity = document.querySelector("#humidity");
-  displayHumidity.innerHTML = humidity;
 
   let wind = Math.round(response.data.wind.speed);
   let displayWind = document.querySelector("#wind");
   displayWind.innerHTML = wind;
 
-  console.log(response);
+  let humidity = Math.round(response.data.temperature.humidity);
+  let displayHumidity = document.querySelector("#humidity");
+  displayHumidity.innerHTML = humidity;
+
+  let pressure = Math.round(response.data.temperature.pressure);
+  let displayPressure = document.querySelector("#pressure");
+  displayPressure.innerHTML = pressure;
 }
 
 //search function
 function searchCity(city) {
-  let apiKey = "5ad4d6552040940c65e12ddec5df0535";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiKey = "040ffb19o36e1562a0f417abf724b2t9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
 searchCity("Sydney");
 
 function newCity(event) {
@@ -84,11 +78,10 @@ let form = document.querySelector("#search");
 form.addEventListener("submit", newCity);
 
 function getCoord(position) {
-  let apiKey = "5ad4d6552040940c65e12ddec5df0535";
+  let apiKey = "040ffb19o36e1562a0f417abf724b2t9";
   let la = position.coords.latitude;
   let lo = position.coords.longitude;
-  let units = "metric";
-  let owapi = `https://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lo}&units=${units}&appid=${apiKey}`;
+  let owapi = `https://api.shecodes.io/weather/v1/current?lon=${lo}&lat=${la}&key=${apiKey}&units=metric`;
   axios.get(owapi).then(showTemperature);
 }
 
