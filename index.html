@@ -62,16 +62,19 @@
         <div class="row justify-content-evenly combinedReport">
           <div class="col-4 quick">
             <ul class="list-unstyled">
-              <li id="current-city"></li>
+              <li>
+                <i class="fa-solid fa-location-dot place"></i
+                ><span id="current-city"></span>
+              </li>
               <li id="current-temp"></li>
-              <li id="description"></li>
+              <li><img src="" id="icon" /><span id="description"></span></li>
             </ul>
           </div>
 
           <div class="col-4 detail">
             <ul class="list-unstyled">
               <li>Feels like: <span id="feels-like"></span>°C</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <li>Wind: <span id="wind"></span> m/s</li>
               <li>Humidity: <span id="humidity"></span>%</li>
               <li>Pressure: <span id="pressure"></span> hPa</li>
             </ul>
@@ -130,6 +133,9 @@
     >
       Open-sourced on Github
     </a>
-    and hosted on Netlify
+    and
+    <a href="https://timely-arithmetic-d796b6.netlify.app/">
+      hosted on Netlify</a
+    >
   </footer>
 </html>

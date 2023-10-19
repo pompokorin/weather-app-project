@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: ffdfdf;
+  background-color: #ffdfdf;
 }
 
 form {
@@ -52,8 +52,18 @@ form {
   text-align: center;
 }
 
+.place {
+  color: #fb929e;
+}
+
 #current-temp {
-  font-size: 50px;
+  font-size: 30px;
+  padding-top: 9px;
+  font-weight: 500;
+}
+
+img {
+  width: 18%;
 }
 
 #current-city {

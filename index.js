@@ -1,4 +1,6 @@
-function formatDate(now) {
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -23,15 +25,14 @@ function formatDate(now) {
   return `${day} ${hours}:${minutes}`;
 }
 
-let displayDate = document.querySelector("#current-date");
-let currentTime = new Date();
-displayDate.innerHTML = formatDate(currentTime);
-
 //getting weather info from open-weather-map
 function showTemperature(response) {
+  let displayDate = document.querySelector("#current-date");
+  displayDate.innerHTML = formatDate(response.data.time * 1000);
+
   let cityElement = response.data.city;
   let cityName = document.querySelector("#current-city");
-  cityName.innerHTML = `📍${cityElement}`;
+  cityName.innerHTML = cityElement;
 
   let temperature = Math.round(response.data.temperature.current);
   let currTemp = document.querySelector("#current-temp");
@@ -39,7 +40,7 @@ function showTemperature(response) {
 
   let description = response.data.condition.description;
   let tempDescrip = document.querySelector("#description");
-  tempDescrip.innerHTML = description;
+  tempDescrip.innerHTML = `${description}`;
 
   let actualTemp = Math.round(response.data.temperature.feels_like);
   let feelslikeTemp = document.querySelector("#feels-like");
@@ -56,6 +57,12 @@ function showTemperature(response) {
   let pressure = Math.round(response.data.temperature.pressure);
   let displayPressure = document.querySelector("#pressure");
   displayPressure.innerHTML = pressure;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
 
 //search function
