@@ -62,6 +62,7 @@ form {
 
 #description {
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .detail {

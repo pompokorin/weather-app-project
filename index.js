@@ -9,7 +9,6 @@ function formatDate(now) {
     minutes = `0${minutes}`;
   }
 
-  let dayIndex = now.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,14 +18,14 @@ function formatDate(now) {
     "Friday",
     "Saturday",
   ];
-  let day = days[dayIndex];
+  let day = days[now.getDay()];
 
   return `${day} ${hours}:${minutes}`;
 }
 
 let displayDate = document.querySelector("#current-date");
-let currentTime = new Date();
-displayDate.innerHTML = formatDate(currentTime);
+let currentDate = new Date();
+displayDate.innerHTML = formatDate(currentDate);
 
 //getting weather info from open-weather-map
 function showTemperature(response) {
@@ -34,7 +33,6 @@ function showTemperature(response) {
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = `📍${cityElement}`;
 
-  let temperature = Math.round(response.data.temperature.current);
   let currTemp = document.querySelector("#current-temp");
   currTemp.innerHTML = `${temperature}℃`;
 
@@ -66,8 +64,6 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-searchCity("Sydney");
-
 function newCity(event) {
   event.preventDefault();
   let newCity = document.querySelector("#search-input").value;
@@ -92,3 +88,5 @@ function currentLocation(event) {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
+
+searchCity("Sydney");
