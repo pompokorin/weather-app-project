@@ -24,8 +24,8 @@ function formatDate(now) {
 }
 
 let displayDate = document.querySelector("#current-date");
-let currentDate = new Date();
-displayDate.innerHTML = formatDate(currentDate);
+let currentTime = new Date();
+displayDate.innerHTML = formatDate(currentTime);
 
 //getting weather info from open-weather-map
 function showTemperature(response) {
@@ -64,6 +64,8 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+searchCity("Sydney");
+
 function newCity(event) {
   event.preventDefault();
   let newCity = document.querySelector("#search-input").value;
@@ -88,5 +90,3 @@ function currentLocation(event) {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
-
-searchCity("Sydney");
