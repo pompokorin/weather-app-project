@@ -32,7 +32,7 @@ function showTemperature(response) {
 
   let cityElement = response.data.city;
   let cityName = document.querySelector("#current-city");
-  cityName.innerHTML = cityElement;
+  cityName.innerHTML = `  ${cityElement}`;
 
   let temperature = Math.round(response.data.temperature.current);
   let currTemp = document.querySelector("#current-temp");
