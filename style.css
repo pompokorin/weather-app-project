@@ -62,8 +62,21 @@ form {
   font-weight: 500;
 }
 
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -16px;
+}
+
+a {
+  text-decoration: none;
+  color: #fb929e;
+}
+
 img {
-  width: 18%;
+  margin-right: 5px;
+  height: 70px;
+  width: 50px;
 }
 
 #current-city {

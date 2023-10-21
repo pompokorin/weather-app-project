@@ -34,9 +34,10 @@ function showTemperature(response) {
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = `  ${cityElement}`;
 
-  let temperature = Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
+  let temperature = Math.round(celsiusTemperature);
   let currTemp = document.querySelector("#current-temp");
-  currTemp.innerHTML = `${temperature}℃`;
+  currTemp.innerHTML = temperature;
 
   let description = response.data.condition.description;
   let tempDescrip = document.querySelector("#description");
@@ -72,16 +73,11 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-searchCity("Sydney");
-
 function newCity(event) {
-  event.preventDefault();
+  event.preventDefault(); //prevent from reloading
   let newCity = document.querySelector("#search-input").value;
   searchCity(newCity);
 }
-
-let form = document.querySelector("#search");
-form.addEventListener("submit", newCity);
 
 function getCoord(position) {
   let apiKey = "040ffb19o36e1562a0f417abf724b2t9";
@@ -96,5 +92,35 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(getCoord);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let form = document.querySelector("#search");
+form.addEventListener("submit", newCity);
+
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchCity("Sydney");

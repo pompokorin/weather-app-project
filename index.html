@@ -64,17 +64,24 @@
             <ul class="list-unstyled">
               <li>
                 <i class="fa-solid fa-location-dot place"></i
-                ><span id="current-city"></span>
+                ><span id="current-city"> </span>
               </li>
-              <li id="current-temp"></li>
-              <li><img src="" id="icon" /><span id="description"></span></li>
+              <li>
+                <img src="" id="icon" /><span id="current-temp"></span
+                ><span class="units">
+                  <a href="#" class="active" id="celsius-link">°C </a>
+                  |
+                  <a href="#" id="fahrenheit-link" class="">°F</a></span
+                >
+              </li>
+              <li id="description"></li>
             </ul>
           </div>
 
           <div class="col-4 detail">
             <ul class="list-unstyled">
               <li>Feels like: <span id="feels-like"></span>°C</li>
-              <li>Wind: <span id="wind"></span> m/s</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
               <li>Humidity: <span id="humidity"></span>%</li>
               <li>Pressure: <span id="pressure"></span> hPa</li>
             </ul>
