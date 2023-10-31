@@ -92,44 +92,10 @@ img {
   font-size: 20px;
 }
 
-.next5days {
-  text-align: center;
+.weather-forecast {
   font-size: 20px;
-}
-
-.one {
-  border: 1px solid #dadde1;
+  text-align: center;
   padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-.two {
-  border: 1px solid #dadde1;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-.three {
-  border: 1px solid #dadde1;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-.four {
-  border: 1px solid #dadde1;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-.five {
-  border: 1px solid #dadde1;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
 }
 
 footer {
