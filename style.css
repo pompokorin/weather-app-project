@@ -69,8 +69,11 @@ form {
 }
 
 a {
-  text-decoration: none;
   color: #fb929e;
+}
+
+a:hover {
+  cursor: default;
 }
 
 img {
