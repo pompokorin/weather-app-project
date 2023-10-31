@@ -25,6 +25,13 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "040ffb19o36e1562a0f417abf724b2t9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //getting weather info from open-weather-map
 function showTemperature(response) {
   let displayDate = document.querySelector("#current-date");
@@ -37,7 +44,7 @@ function showTemperature(response) {
   celsiusTemperature = response.data.temperature.current;
   let temperature = Math.round(celsiusTemperature);
   let currTemp = document.querySelector("#current-temp");
-  currTemp.innerHTML = temperature;
+  currTemp.innerHTML = `${temperature} °C`;
 
   let description = response.data.condition.description;
   let tempDescrip = document.querySelector("#description");
@@ -116,11 +123,5 @@ form.addEventListener("submit", newCity);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Sydney");
